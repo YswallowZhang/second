@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function sheep () {
+		var year;
+		var number;
+		return {
+			setYear :function(years) {
+	        	year = years;
+	        	count = 0;
+	        	if(!number && !year) throw 'argument erro';
+	        	this.addCount(number, year);
+		    },
+		    setNumber :function(num) {
+		    	number = num; 
+		    	count = 0;
+		    	if(!year || !number) throw 'argument erro';
+		    	this.addCount(number, year);
+		    },
+		    addCount :function(i, years) {	 
+			    if(arguments.length != 2) 
+			       throw 'arguments false'; 	
+	    		count ++;
+		    	number = i;	
+		    	year = years;   	
+				for (; i < year; i ++) {
+					if(i >= 5 && i <= 15) {
+						var haha = new sheep();
+						haha.addCount(1, year - i);
+					} else if (i == 20) {
+						count --;					
+					}
+				}
+				count = count * number;
+		    }	
+		}		
+}
+var count = 0;
+var hehe = new sheep();
+
+
+</script>
+</body>
+</html>
